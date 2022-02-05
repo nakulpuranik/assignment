@@ -40,5 +40,6 @@ class ListActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.movieReceyclerView.adapter = movieAdapter
+        movieAdapter.notifyDataSetChanged()
     }
 }

@@ -14,16 +14,15 @@ class MovieAdapter (
     private val onItemClick: (MovieDetails) -> Unit
         ): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
-    class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val binding =  MovieListItemBinding.bind(itemView)
         fun bindData(movieDetails : MovieDetails) {
-            with(binding) {
-                binding.itemTitle.text = movieDetails.title
-                binding.itemSubTitle.text = movieDetails.actors
-                Glide.with(binding.view.context)
-                    .load(movieDetails.poster)
-                    .into(binding.itemImage)
-            }
+
+            binding.itemTitle.text = movieDetails.title
+            binding.itemSubTitle.text = movieDetails.actors
+            Glide.with(binding.view.context)
+                .load(movieDetails.poster)
+                .into(binding.itemImage)
         }
     }
 
