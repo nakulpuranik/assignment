@@ -22,7 +22,7 @@
         android:layout_height="121dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view"
@@ -61,3 +61,16 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+    <TextView
+        android:id="@+id/tvChapterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="26sp"/>
+</LinearLayout>-->

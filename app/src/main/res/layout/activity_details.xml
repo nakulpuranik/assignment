@@ -1,9 +1,551 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailsActivity">
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.DetailsActivity">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="13dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="The Matrix Reloaded" />
+
+        <TextView
+            android:id="@+id/metaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="14dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:text="2003     UA     2h  9m" />
+
+        <ImageView
+            android:id="@+id/movieImage"
+            android:layout_width="100dp"
+            android:layout_height="149dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="27dp"
+            android:scaleType="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/metaInfo"
+            tools:src="@tools:sample/avatars" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toEndOf="@+id/movieImage"
+            app:layout_constraintTop_toBottomOf="@+id/metaInfo">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/genreOne"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Action"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:chipBackgroundColor="@color/background_color"
+                app:chipCornerRadius="1dp"
+                app:chipStrokeColor="@color/item_text_subtitle_color"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/genreTwo"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="Sci-fi"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:chipBackgroundColor="@color/background_color"
+                app:chipCornerRadius="1dp"
+                app:chipStrokeColor="@color/item_text_subtitle_color"
+                app:chipStrokeWidth="1dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/movieSummary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="27dp"
+            android:singleLine="false"
+            android:textColor="@color/off_white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movieImage"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroup"
+            tools:text="@string/movie_summary" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/list_item_seperator_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/movieImage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/streamingContainer"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <ImageView
+                android:id="@+id/playImage"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/circular_white"
+                android:paddingStart="3dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:src="@drawable/ic_playbtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/watch_netflix"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:textSize="12sp"
+                android:text="@string/watch_netflix"
+                app:layout_constraintStart_toEndOf="@+id/playImage"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Watch Netflix" />
+
+            <TextView
+                android:id="@+id/watch_netflix2"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginStart="12dp"
+                android:textSize="12sp"
+                android:text="@string/watch_subscription"
+                android:fontFamily="sans-serif-light"
+                app:layout_constraintStart_toEndOf="@+id/playImage"
+                app:layout_constraintTop_toBottomOf="@+id/watch_netflix"
+                tools:text="With Subscription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/watchListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/streamingContainer">
+
+            <ImageView
+                android:id="@+id/addWatchList"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/circular_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginStart="18dp"
+                android:text="@string/watch_netflix"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/addWatchList"
+                app:layout_constraintStart_toEndOf="@+id/addWatchList"
+                app:layout_constraintTop_toTopOf="@+id/addWatchList"
+                tools:text="Watch Netflix" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--rating section-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:background="@color/black_shade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/watchListContainer">
+
+
+            <View
+                android:id="@+id/border1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/list_item_seperator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_favourites"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/yellow" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="44dp"
+                android:layout_height="21dp"
+                app:layout_constraintEnd_toEndOf="@+id/star"
+                app:layout_constraintStart_toStartOf="@+id/star"
+                app:layout_constraintTop_toBottomOf="@+id/star"
+                tools:text="6.5/10" />
+
+            <TextView
+                android:id="@+id/ratingCount"
+                android:layout_width="46dp"
+                android:layout_height="14dp"
+                android:layout_marginBottom="14dp"
+                android:textColor="@color/item_text_subtitle_color"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/rating"
+                app:layout_constraintStart_toStartOf="@+id/rating"
+                app:layout_constraintTop_toBottomOf="@+id/rating"
+                tools:text="4,91,005" />
+
+            <ImageView
+                android:id="@+id/emptyStar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_favourites"
+                app:layout_constraintStart_toEndOf="@+id/star"
+                app:layout_constraintTop_toBottomOf="@+id/border1" />
+
+            <TextView
+                android:id="@+id/rateText"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/emptyStar"
+                app:layout_constraintStart_toStartOf="@+id/emptyStar"
+                app:layout_constraintTop_toBottomOf="@+id/emptyStar"
+                tools:text="RATE THIS" />
+
+            <TextView
+                android:id="@+id/metaScore"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="41dp"
+                android:background="@color/yellow"
+                android:gravity="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="45" />
+
+            <TextView
+                android:id="@+id/ratingMetascore"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                app:layout_constraintEnd_toEndOf="@+id/metaScore"
+                app:layout_constraintStart_toStartOf="@+id/metaScore"
+                app:layout_constraintTop_toBottomOf="@+id/metaScore"
+                tools:text="Metascore" />
+
+            <TextView
+                android:id="@+id/ratingText2"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:textColor="@color/item_text_subtitle_color"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/metaScore"
+                app:layout_constraintStart_toStartOf="@+id/metaScore"
+                app:layout_constraintTop_toBottomOf="@+id/ratingMetascore"
+                tools:text="74 critic review" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Top billed section-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <View
+                android:id="@+id/border2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/list_item_seperator_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/topTitledText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="21sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Top-Billed Cast" />
+
+            <TextView
+                android:id="@+id/seeAll"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginEnd="21dp"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/topTitledText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/topTitledText"
+                tools:text="see all" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/actorsList"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="13dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topTitledText"
+                app:reverseLayout="true"
+                tools:itemCount="3"
+                tools:listitem="@layout/actor_list_item" />
+
+            <TextView
+                android:id="@+id/director"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actorsList"
+                tools:text="Directors Lana WachowskiLilly Wachowski" />
+
+            <TextView
+                android:id="@+id/writers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/director"
+                tools:text="Writers
+Lilly Wachowski(written by) Lana Wachowski(written by), and others" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--awards container-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/awardsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/black_shade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <TextView
+                android:id="@+id/awardsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="18dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/awards_text"
+                android:textSize="21sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Awards" />
+
+            <TextView
+                android:id="@+id/seeAll1"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_marginEnd="21dp"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/awardsText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/awardsText"
+                tools:text="see all" />
+
+            <TextView
+                android:id="@+id/awardsList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="18dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/awardsText"
+                tools:text="5 wins and 36 nominations" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Parents Guide-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parentsGuideContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/black_shade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/awardsContainer">
+
+        <TextView
+            android:id="@+id/parentsGuideText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="18dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/parents_guide_text"
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Parent's Guide" />
+
+        <TextView
+            android:id="@+id/contentRating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="18dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/parentsGuideText"
+            tools:text="Content Rating Rated R for sci-fi " />
+
+
+        <View
+            android:id="@+id/border3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/list_item_seperator_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contentRating" />
+
+
+        <TextView
+            android:id="@+id/storyLineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="18dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/story_line_text"
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/border3"
+            tools:text="Storyline" />
+
+        <TextView
+            android:id="@+id/storylineContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="50dp"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            android:textColor="@color/off_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storyLineText"
+            tools:text="Content Rating Rated R for sci-fi " />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

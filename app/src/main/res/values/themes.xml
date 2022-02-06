@@ -15,6 +15,7 @@
 
         <item name="android:windowBackground">@color/background_color</item>
         <item name="android:textViewStyle">@style/customTextView</item>
+
     </style>
 
     <style name="customTextView" parent="android:Widget.TextView">

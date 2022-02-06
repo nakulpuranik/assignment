@@ -3,6 +3,7 @@ package com.example.assignment.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.assignment.R
@@ -18,8 +19,9 @@ class MovieAdapter (
         private val binding =  MovieListItemBinding.bind(itemView)
         fun bindData(movieDetails : MovieDetails) {
 
-            binding.itemTitle.text = movieDetails.title
+            binding.itemTitle.text = movieDetails.title + " (" + movieDetails.year +")"
             binding.itemSubTitle.text = movieDetails.actors
+
             Glide.with(binding.view.context)
                 .load(movieDetails.poster)
                 .into(binding.itemImage)
@@ -42,5 +44,4 @@ class MovieAdapter (
     fun addData(listOfMovie: List<MovieDetails>) {
         movieList.addAll(listOfMovie)
     }
-
 }

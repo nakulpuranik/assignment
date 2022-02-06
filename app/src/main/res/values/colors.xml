@@ -12,5 +12,12 @@
     <color name="list_item_seperator_color">#3D3F3E</color>
     <color name="background_color">#181818</color>
     <color name="item_text_subtitle_color">#949596</color>
+    <color name="off_white">#C4C4C4</color>
+    <color name="blue">#0277BD</color>
+    <color name="grey">#424242</color>
+    <color name="black_shade">#202020</color>
+    <color name="black_shade_actor_item_background">#2A2A2A</color>
+    <color name="yellow">#FFBE25</color>
+    <color name="white_shade">#E5E5E5</color>
 
 </resources>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Assignment</string>
+    <string name="movie_summary">The human city of Zion defends itself against the massive invasion of the machines as Neo fights to end the war at another front while also opposing the rogue Agent Smith.</string>
+    <string name="streaming_text">Watch on Netflix</string>
+    <string name="awards_text">Awards</string>
+    <string name="story_line_text">Storyline</string>
+    <string name="parents_guide_text">Parents\' Guide</string>
+    <string name="watch_netflix">Watch Netflix</string>
+    <string name="watch_subscription">With Subscription</string>
 </resources>
