@@ -18,7 +18,6 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_details)
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_details)
         getMovieInfo()
@@ -37,9 +36,6 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Get intent data
-     */
     private fun getMovieInfo(){
         intent?.getParcelableExtra<MovieDetails>("selectedData").also {
             if (it != null) {
@@ -48,14 +44,8 @@ class DetailsActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * convert actors data to list
-     */
     fun actorList(): Array<String> = movieInfo.actors.split(",").toTypedArray()
 
-    /**
-     * initiate the actors listt
-     */
     private fun setActorList(){
         binding.actorsList.layoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.HORIZONTAL, false)
         actorAdapter = ActorAdapter( actorList() )

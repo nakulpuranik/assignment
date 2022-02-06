@@ -29,7 +29,6 @@ class ListActivity : AppCompatActivity() {
         return Gson().fromJson(movieList, typeToken.type)
     }
 
-
     private fun bindRecyclerView(){
         movieReceyclerView.layoutManager = LinearLayoutManager(this)
         movieAdapter = MovieAdapter(
