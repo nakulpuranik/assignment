@@ -7,4 +7,10 @@
     <string name="parents_guide_text">Parents\' Guide</string>
     <string name="watch_netflix">Watch Netflix</string>
     <string name="watch_subscription">With Subscription</string>
+    <string name="rate_this_text">Rate this</string>
+    <string name="metascore_text">Metascore</string>
+    <string name="content_rating_r_text">Content Rating \nRated R for sci-fi violence and brief sexual content</string>
+    <string name="see_all_text">See all</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="add_to_watchList">Add to Watchlist</string>
 </resources>

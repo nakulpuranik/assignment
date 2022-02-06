@@ -5,7 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/back_corner_radious.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable/circular_white.xml" value="0.4197916666666667" />
-        <entry key="app/src/main/res/layout/activity_details.xml" value="0.5" />
+        <entry key="app/src/main/res/drawable/ic_dotted_vert.xml" value="0.24635416666666668" />
+        <entry key="app/src/main/res/drawable/user_circle.xml" value="0.4197916666666667" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/actor_list_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/movie_list_item.xml" value="0.33" />
